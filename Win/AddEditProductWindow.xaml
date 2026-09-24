@@ -1,0 +1,96 @@
+﻿<Window x:Class="Pizza.AddEditProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Товар" Height="920" Width="500"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="DarkOrange">
+    <Grid>
+        <Border Width="390"
+                Background="White"
+                BorderBrush="#D0D0D0"
+                BorderThickness="1"
+                CornerRadius="12"
+                Padding="20"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center" Height="848">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,0,-87">
+                <StackPanel>
+                    <TextBlock x:Name="TbTitle"
+                               Text="Товар"
+                               FontSize="22"
+                               FontWeight="Bold"
+                               HorizontalAlignment="Center"
+                               Margin="0 0 0 20"/>
+                    <TextBlock Text="Название товара"/>
+                    <TextBox x:Name="TBoxProductName"
+                             Height="30"
+                             Margin="0 5 0 12"/>
+                    <TextBlock Text="Описание товара"/>
+                    <TextBox x:Name="TBoxDescription"
+                             Height="70"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"
+                             Margin="0 5 0 12"/>
+                    <TextBlock Text="Цена"/>
+                    <TextBox x:Name="TBoxPrice"
+                             Height="30"
+                             Margin="0 5 0 12"/>
+                    <TextBlock Text="Состав товара"/>
+                    <ListBox x:Name="LBoxProductIngredients"
+                             Height="90"
+                             DisplayMemberPath="IngredientName"
+                             Margin="0 5 0 8"/>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0 0 0 8">
+                        <ComboBox x:Name="CBoxIngredients"
+                                  Width="230"
+                                  Height="30"
+                                  DisplayMemberPath="IngredientName"/>
+                        <Button Content="Добавить"
+                                Width="90"
+                                Height="30"
+                                Margin="5 0 0 0"
+                                Click="BtnAddIngredientToProduct_Click"/>
+                    </StackPanel>
+                    <Button Content="Удалить из состава"
+                            Height="30"
+                            Margin="0 0 0 12"
+                            Click="BtnRemoveIngredientFromProduct_Click"/>
+                    <TextBlock Text="Новый ингредиент"/>
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0 5 0 12">
+                        <TextBox x:Name="TBoxNewIngredient"
+                                 Width="230"
+                                 Height="30"/>
+                        <Button Content="Создать"
+                                Width="90"
+                                Height="30"
+                                Margin="5 0 0 0"
+                                Click="BtnCreateIngredient_Click"/>
+                    </StackPanel>
+                    <TextBlock Text="Картинка товара"/>
+                    <Border Width="130"
+                            Height="130"
+                            Background="#E8E8E8"
+                            BorderBrush="#C5C5C5"
+                            BorderThickness="1"
+                            CornerRadius="8"
+                            HorizontalAlignment="Center"
+                            Margin="0 5 0 10"
+                            ClipToBounds="True">
+                        <Image x:Name="ImageProduct"
+                               Stretch="Fill"/>
+                    </Border>
+                    <Button Content="Выбрать картинку"
+                            Height="32"
+                            Margin="0 0 0 15"
+                            Click="BtnSelectImage_Click"/>
+                    <Button Content="Сохранить"
+                            Height="35"
+                            Click="BtnSave_Click"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Window>

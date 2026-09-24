@@ -1,0 +1,88 @@
+﻿<Window x:Class="Pizza.WorkSchedule"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="График работы" Height="500" Width="650"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#F2F2F2">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="График работы"
+                   FontSize="26"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0 0 0 20"/>
+        <Border Grid.Row="1"
+                Background="White"
+                BorderBrush="#D0D0D0"
+                BorderThickness="1"
+                CornerRadius="10"
+                Padding="15"
+                Margin="0 0 0 15">
+            <StackPanel>
+                <TextBlock Text="Выберите день, в который сможете работать:"
+                           FontSize="15"
+                           Margin="0 0 0 8"/>
+                <StackPanel Orientation="Horizontal">
+                    <DatePicker x:Name="DPWorkDate"
+                                Width="200"
+                                Height="30"
+                                Margin="0 0 10 0"/>
+                    <Button Content="Отметиться"
+                            Width="120"
+                            Height="30"
+                            Click="BtnAddSchedule_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <ListView x:Name="LViewSchedule"
+                  Grid.Row="2"
+                  BorderThickness="0"
+                  Background="Transparent">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Margin" Value="0 0 0 8"/>
+                    <Setter Property="Padding" Value="0"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="White"
+            BorderBrush="#D0D0D0"
+            BorderThickness="1"
+            CornerRadius="8"
+            Padding="10">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="220"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding WorkDateText}"
+                       FontSize="15"
+                       VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1"
+                       Text="{Binding EmployeeName}"
+                       FontSize="15"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Row="3"
+                Content="Назад"
+                Width="120"
+                Height="35"
+                HorizontalAlignment="Center"
+                Margin="0 15 0 0"
+                Click="BtnBack_Click"/>
+    </Grid>
+</Window>

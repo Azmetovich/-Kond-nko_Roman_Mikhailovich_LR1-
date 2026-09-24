@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4803d7993a7d4978932d98440b8269f0" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="PizzaParovozovModel.Cart" Width="1.5" PointX="0.625" PointY="2.5" />
+        <EntityTypeShape EntityType="PizzaParovozovModel.Employee" Width="1.5" PointX="5.375" PointY="6.5" />
+        <EntityTypeShape EntityType="PizzaParovozovModel.Ingredient" Width="1.5" PointX="2.5" PointY="8.125" />
+        <EntityTypeShape EntityType="PizzaParovozovModel.OrderProduct" Width="1.5" PointX="10.125" PointY="8" />
+        <EntityTypeShape EntityType="PizzaParovozovModel.Order" Width="1.5" PointX="7.625" PointY="8" />
+        <EntityTypeShape EntityType="PizzaParovozovModel.Product" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="PizzaParovozovModel.ProductIngredient" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="PizzaParovozovModel.Role" Width="1.5" PointX="0.75" PointY="5.25" />
+        <EntityTypeShape EntityType="PizzaParovozovModel.User" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="PizzaParovozovModel.WorkSchedule" Width="1.5" PointX="7.625" PointY="5.5" />
+        <AssociationConnector Association="PizzaParovozovModel.FK__Cart__IdProduct__3E52440B" />
+        <AssociationConnector Association="PizzaParovozovModel.FK__Cart__IdUser__3D5E1FD2" />
+        <AssociationConnector Association="PizzaParovozovModel.FK__Employee__IdUser__29572725" />
+        <AssociationConnector Association="PizzaParovozovModel.FK__Orders__IdEmploy__33D4B598" />
+        <AssociationConnector Association="PizzaParovozovModel.FK__WorkSched__IdEmp__3A81B327" />
+        <AssociationConnector Association="PizzaParovozovModel.FK__ProductIn__IdIng__30F848ED" />
+        <AssociationConnector Association="PizzaParovozovModel.FK__OrderProd__IdOrd__36B12243" />
+        <AssociationConnector Association="PizzaParovozovModel.FK__OrderProd__IdPro__37A5467C" />
+        <AssociationConnector Association="PizzaParovozovModel.FK__ProductIn__IdPro__300424B4" />
+        <AssociationConnector Association="PizzaParovozovModel.FK__User__IdRole__267ABA7A" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
